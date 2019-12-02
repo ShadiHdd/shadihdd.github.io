@@ -1,0 +1,88 @@
+:root {
+
+    /* pygments */
+
+    /* Spacemacs-inspired */
+    --hlhll:   #333333;  /* Highlight */
+    --hlbg:    #272727;  /* Default Background */
+    --hlcl:    #bbbbbb;  /* Default Color */
+    --hln:     #bbbbbb;  /* Name */
+    --hlo:     #bbbbbb;  /* Operator */
+    --hlsa:    #bbbbbb;  /* Literal.String.Affix */
+    --hlnb:    #bbbbbb;  /* Name.Builtin */
+    --hlnn:    #bbbbbb;  /* Name.Namespace */
+    --hlnx:    #bbbbbb;  /* Name.Other */
+    --hlp:     #bbbbbb;  /* Punctuation */
+    --hlnf:    #bc6ec5;  /* Name.Function */
+    --hlnt:    #bc6ec5;  /* Name.Tag */
+    --hlk:     #4e95d4;  /* Keyword */
+    --hlkn:    #4e95d4;  /* Keyword.Namespace */
+    --hlkd:    #4e95d4;  /* Keyword.Declaration */
+    --hlna:    #4e95d4;  /* Name.Attribute */
+    --hlbp:    #a25aab;  /* Name.Builtin.Pseudo */
+    --hll:     #a25aab;  /* Literal */
+    --hlm:     #a25aab;  /* Literal.Number */
+    --hlmb:    #a25aab;  /* Literal.Number.Bin */
+    --hlmf:    #a25aab;  /* Literal.Number.Float */
+    --hlmh:    #a25aab;  /* Literal.Number.Hex */
+    --hlmi:    #a25aab;  /* Literal.Number.Integer */
+    --hlmo:    #a25aab;  /* Literal.Number.Oct */
+    --hlil:    #a25aab;  /* Literal.Number.Integer.Long */
+    --hlkc:    #a25aab;  /* Keyword.Constant */
+    --hlsd:    #2a9ca8;  /* Literal.String.Doc */
+    --hlc:     #2a9ca8;  /* Comment */
+    --hlch:    #2a9ca8;  /* Comment.Hashbang */
+    --hlcm:    #2a9ca8;  /* Comment.Multiline */
+    --hlcp:    #2a9ca8;  /* Comment.Preproc */
+    --hlcpf:   #2a9ca8;  /* Comment.PreprocFile */
+    --hlc1:    #2a9ca8;  /* Comment.Single */
+    --hlcs:    #2a9ca8;  /* Comment.Special */
+    --hlnc:    #ce537a;  /* Name.Class */
+    --hlnd:    #ce537a;  /* Name.Decorator */
+    --hlkt:    #ce537a;  /* Keyword.Type */
+    --hls:     #2d9070;  /* Literal.String */
+    --hlsr:    #2d9070;  /* Literal.String.Regex */
+    --hls1:    #2d9070;  /* Literal.String.Single */
+    --hlsb:    #2d9070;  /* Literal.String.Backtick */
+    --hlsc:    #2d9070;  /* Literal.String.Char */
+    --hldl:    #2d9070;  /* Literal.String.Delimiter */
+    --hls2:    #2d9070;  /* Literal.String.Double */
+    --hlse:    #2d9070;  /* Literal.String.Escape */
+    --hlsh:    #2d9070;  /* Literal.String.Heredoc */
+    --hlsi:    #2d9070;  /* Literal.String.Interpol */
+    --hlsx:    #2d9070;  /* Literal.String.Other */
+    --hlss:    #2d9070;  /* Literal.String.Symbol */
+
+
+    /* Rainbow Parentheses */
+    --hlrb0:   #bbbbbb;
+    --hlrb1:   #4e95d4;
+    --hlrb2:   #a25aab;
+    --hlrb3:   #2d9070;
+    --hlrb4:   #64aa1d;
+    --hlrb5:   #a98f1d;
+    --hlrb6:   #4e95d4;
+    --hlrb7:   #a25aab;
+    --hlrb8:   #2d9070;
+
+    /* Unencountered */
+    --hlgd:    #f92672;  /* Generic.Deleted */
+    --hlgi:    #a6e22e;  /* Generic.Inserted */
+    --hlgu:    #75715e;  /* Generic.Subheading */
+    --hlkp:    #66d9ef;  /* Keyword.Pseudo */
+    --hlkr:    #66d9ef;  /* Keyword.Reserved */
+    --hlld:    #e6db74;  /* Literal.Date */
+    --hlno:    #66d9ef;  /* Name.Constant */
+    --hlni:    #f8f8f2;  /* Name.Entity */
+    --hlne:    #a6e22e;  /* Name.Exception */
+    --hlnl:    #f8f8f2;  /* Name.Label */
+    --hlpy:    #f8f8f2;  /* Name.Property */
+    --hlnv:    #f8f8f2;  /* Name.Variable */
+    --hlow:    #4c8fca;  /* Operator.Word */
+    --hlw:     #f8f8f2;  /* Text.Whitespace */
+    --hlfm:    #a6e22e;  /* Name.Function.Magic */
+    --hlvc:    #f8f8f2;  /* Name.Variable.Class */
+    --hlvg:    #f8f8f2;  /* Name.Variable.Global */
+    --hlvi:    #f8f8f2;  /* Name.Variable.Instance */
+    --hlvm:    #f8f8f2;  /* Name.Variable.Magic */
+}

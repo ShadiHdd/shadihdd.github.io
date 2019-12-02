@@ -1,0 +1,17 @@
+/*
+ * Different css for index.html and pages
+ * (Layout and positioning)
+ */
+
+/* Hide table of contents */
+div.toc {
+    display: none;
+}
+
+main {
+    max-width: 80ch;
+}
+
+h1 {
+    font-size: 260% !important;
+}

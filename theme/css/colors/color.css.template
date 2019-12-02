@@ -1,0 +1,40 @@
+/* Generated Colors */
+
+/*
+ * https://github.com/nashamri/spacemacs-theme/blob/master/spacemacs-common.el
+ * http://www.workwithcolor.com/color-converter-01.htm
+ */
+
+:root {
+
+    /* white in default scheme (higher number is brighter) */
+    --w2: {{ w2 }};
+    --w1: {{ w1 }};
+    --w0: {{ w0 }};
+    --w0_: {{ w0 }}00;
+
+    /* greys (higher number is darker) */
+    --g0:  {{ g0 }};
+    --g1:  {{ g1 }};
+    --g2:  {{ g2 }};
+    --g2a: {{ g2 }}ed; /* with alpha */
+    --g3:  {{ g3 }};
+    --g4:  {{ g4 }};
+
+    /* subtle colors */
+    --s1: {{ s1 }};
+    --s2: {{ s2 }};
+    --s3: {{ s3 }};
+    --s4: {{ s4 }};
+
+    /* headers and primary color sequence */
+    --h1: {{ h1 }};
+    --h2: {{ h2 }};
+    --h3: {{ h3 }};
+    --h4: {{ h4 }}; 
+
+    /* loud colors */
+    --e1: {{ e1 }};
+    --e2: {{ e2 }};
+    --e3: {{ e3 }};
+}

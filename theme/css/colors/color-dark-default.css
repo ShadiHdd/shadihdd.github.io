@@ -1,0 +1,40 @@
+/* Generated Colors */
+
+/*
+ * https://github.com/nashamri/spacemacs-theme/blob/master/spacemacs-common.el
+ * http://www.workwithcolor.com/color-converter-01.htm
+ */
+
+:root {
+
+    /* white in default scheme (higher number is brighter) */
+    --w2: #cccccc;
+    --w1: #bababa;
+    --w0: #b2b2b2;
+    --w0_: #b2b2b200;
+
+    /* greys (higher number is darker) */
+    --g0:  #3b3b3b;
+    --g1:  #2e2e2e;
+    --g2:  #272727;
+    --g2a: #272727ed; /* with alpha */
+    --g3:  #222222;
+    --g4:  #191919;
+
+    /* subtle colors */
+    --s1: #a2b2d2;
+    --s2: #409b9b;
+    --s3: #2aa1ae;
+    --s4: #444155;
+
+    /* headers and primary color sequence */
+    --h1: #4f97d7;
+    --h2: #2d9574;
+    --h3: #67b11d;
+    --h4: #b1951d; 
+
+    /* loud colors */
+    --e1: #df5e8c;
+    --e2: #bc6ec5;
+    --e3: #eead0e;
+}

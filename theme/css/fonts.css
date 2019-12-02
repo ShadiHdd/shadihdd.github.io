@@ -1,0 +1,65 @@
+/*
+ * CrimsonPro
+ *     https://github.com/Fonthausen/CrimsonPro
+ *     Retrieved March 2 2019
+ *     Licensed under SIL Open Font License 1.1
+ *         https://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
+ *         ./fonts/OFL.txt
+ *
+ * Name change to "PurpleHack" to comply with OFL (format converted to woff2).
+ * "PurpleHack" is hereby re-released under the SIL OFL 1.1 with explicit
+ * permission for the name "PurpleHack" to be used in any derivatives.
+ *
+ * See ./fonts/PurpleHack-Readme.txt
+ *
+ * The glyphs for "cent", "colonsign", "dollar", "guarani", "naira", and "won"
+ * may render differently when bold.
+ *
+ * Converted to woff2 by FontSquirrel
+ *     https://www.fontsquirrel.com/tools/webfont-generator
+ *
+ *
+ * SourceCodePro from https://github.com/adobe-fonts/source-code-pro
+ * Release 2.030R-ro/1.050R-it
+ */
+
+/* PurpleHack */
+
+@font-face {
+    font-family: PurpleHack;
+    font-style: normal;
+    src: url('fonts/PurpleHack-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: PurpleHack;
+    font-weight: bold;
+    src: url('fonts/PurpleHack-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: PurpleHack;
+    font-style: italic;
+    src: url('fonts/PurpleHack-Italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: PurpleHack;
+    font-weight: bold;
+    font-style: italic;
+    src: url('fonts/PurpleHack-BoldItalic.woff2') format('woff2');
+}
+
+/* SourceCodePro */
+
+@font-face {
+    font-family: SourceCodePro;
+    font-style: normal;
+    src: url('fonts/SourceCodePro-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: SourceCodePro;
+    font-weight: bold;
+    src: url('fonts/SourceCodePro-Bold.woff2') format('woff2');
+}
