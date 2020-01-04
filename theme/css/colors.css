@@ -71,6 +71,10 @@ ul, ol, nav, div.toc {
     background: var(--g2);
 }
 
+nav {
+    border-left: 1px solid var(--h2);
+}
+
 li.active-ref {
     border: 1px solid var(--w0);
     background: var(--g2);
@@ -93,6 +97,10 @@ input[type=button], button {
     background-color: var(--g2);
     color: var(--w0);
 }
+input:focus {
+  border-color: var(--h1);
+}
+
 
 /* svg */
 /* .inlinesvg path, */

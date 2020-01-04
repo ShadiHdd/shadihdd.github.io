@@ -4,7 +4,11 @@
 * page        - if pages should differ from articles
 * decorations - borders, font, etc
 * interactive - dynamic content. menu, hover, etc.
-* color-x-y   - colors
+* colors      - colors
+
+* charts      - for D3 stuff
+* katex.min   - for math stuff
+* fonts       - for font import statements (only)
 
 # Color
 

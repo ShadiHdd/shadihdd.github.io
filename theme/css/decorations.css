@@ -4,8 +4,8 @@
 
 main {
     /* For PurpleHack, line-length is ~80ch*/
-    max-width: 55ch;
-    min-width: 40ch;
+    max-width: 63ch;
+    min-width: 30ch;
 }
 
 body {
@@ -13,7 +13,7 @@ body {
     font-size: 22px;
 }
 pre {
-    font-family: SourceCodePro, Liberation Mono, monospace;
+    font-family: SourceCodePro, monospace;
     font-size: 62%;
 }
 code {
@@ -22,7 +22,10 @@ code {
 h1, h2, h3, h4,
 .toc, nav ul {
     font-size: 80%;
-    font-family: Liberation Sans, sans-serif;
+    font-family: sans-serif;
+}
+.math {
+    font-size: 80%;
 }
 
 /*******************************************************************/
@@ -97,7 +100,7 @@ input[type=button], button {
 
 
 /*
- * Desktop ( > 1200 px width)
+ * Desktop
  *
  */
 @media (min-width: 190ch) {

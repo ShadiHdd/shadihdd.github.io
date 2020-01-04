@@ -395,3 +395,75 @@ onReady(function() {
     }
 
 });
+
+/*  _  __    _____   __  __
+ * | |/ /__ |_   _|__\ \/ /
+ * | ' // _` || |/ _ \\  /
+ * | . \ (_| || |  __//  \
+ * |_|\_\__,_||_|\___/_/\_\
+ */
+// https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
+
+onReady(function() {
+
+    // Replace .katex elements with their TeX source (<annotation> element).
+    // Modifies fragment in-place.
+    var katexReplaceWithTex = function(fragment) {
+        // Remove .katex-html blocks that are preceded by .katex-mathml blocks
+        // (which will get replaced below).
+        var katexHtml = fragment.querySelectorAll('.katex-mathml + .katex-html');
+        for (let i = 0; i < katexHtml.length; i++) {
+            var element = katexHtml[i];
+            if (element.remove) {
+                element.remove(null);
+            } else {
+                element.parentNode.removeChild(element);
+            }
+        }
+        // Replace .katex-mathml elements with their annotation (TeX source)
+        // descendant, with inline delimiters.
+        var katexMathml = fragment.querySelectorAll('.katex-mathml');
+        for (let i = 0; i < katexMathml.length; i++) {
+            var element = katexMathml[i];
+            var texSource = element.querySelector('annotation');
+            if (texSource) {
+                if (element.replaceWith) {
+                    element.replaceWith(texSource);
+                } else {
+                    element.parentNode.replaceChild(texSource, element);
+                }
+                texSource.innerHTML = '$' + texSource.innerHTML + '$';
+            }
+        }
+        // Switch display math to display delimiters.
+        var displays = fragment.querySelectorAll('.katex-display annotation');
+        for (let i = 0; i < displays.length; i++) {
+            var element = displays[i];
+            element.innerHTML = '$$' + element.innerHTML.substr(1, element.innerHTML.length - 2) + '$$';
+        }
+        return fragment;
+    };
+
+    // Global copy handler to modify behavior on .katex elements.
+    document.addEventListener('copy', function(event) {
+        var selection = window.getSelection();
+        if (selection.isCollapsed) {
+            return;  // default action OK if selection is empty
+        }
+        var fragment = selection.getRangeAt(0).cloneContents();
+        if (!fragment.querySelector('.katex-mathml')) {
+            return;  // default action OK if no .katex-mathml elements
+        }
+        // Preserve usual HTML copy/paste behavior.
+        var html = [];
+        for (let i = 0; i < fragment.childNodes.length; i++) {
+            html.push(fragment.childNodes[i].outerHTML);
+        }
+        event.clipboardData.setData('text/html', html.join(''));
+        // Rewrite plain-text version.
+        event.clipboardData.setData('text/plain',
+            katexReplaceWithTex(fragment).textContent);
+        // Prevent normal copy handling.
+        event.preventDefault();
+    });
+});

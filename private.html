@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Language" content="en">
 
     <title>
-Shadi Haddad    </title>
+Links    </title>
 
     <link rel="shortcut icon" href="static/favicon.png">
 
@@ -27,7 +27,6 @@ Shadi Haddad    </title>
     <link rel="stylesheet"
           href="theme/css/fonts.css">
 
-<link rel="stylesheet" type="text/css" href="theme/css/page.css">
 
     <!-- Pelican variable injection -->
     <script type="text/javascript">var pelican = {};</script>
@@ -82,78 +81,78 @@ Shadi Haddad    </title>
 
 <header>
     <h1>
-        Shadi Haddad
+        Private Links
     </h1>
 </header>
-<article class="index">
 
-            <img src="/images/shadi.jpg"></img>
+<article>
 
-<p>
-    I am a PhD student in Applied Mathematics at
-    <a href="https://www.ucsc.edu/">UC Santa Cruz</a>
-    advised by
-<a href="https://abhishekhalder.bitbucket.io/">
-    Abhishek Halder.
-</a>
-</p>
+        <input id="slug" type="password" name="slug">
+  Original Slug
+        <br>
+        <input id="host" type="password" name="host">
+  Generating Hostname
+        <br>
+<button id="submit_button" type="button">Submit</button>
+
+<!-- From https://cdnjs.com/libraries/crypto-js -->
+<script src="theme/js/lib/cryptojs_md5.js"></script>
+<script type="text/javascript">
 
 
-<a href="/hosted/CV_Shadi Haddad_Webpage.pdf">Curriculum Vitae</a>
+  var submitBtn = document.getElementById('submit_button');
+  var slugEl = document.getElementById('slug');
+  var hostEl = document.getElementById('host');
 
-<h2>
-    External Links
-</h2>
+  onReady(function(){
+      document.getElementById('slug').focus();
+  });
+  
+  function decrypt() {
+      var slug = slugEl.value;
+      var host = hostEl.value;
 
-<ul>
-    <li>
-<a href="https://scholar.google.com/citations?user=TzRr8e4AAAAJ">Google Scholar</a>
-    </li><li>
-<a href="https://www.researchgate.net/profile/Shadi_Haddad">Research Gate</a>
-    </li><li>
-<a href="https://github.com/shadihdd">Github</a>
-    </li>
-</ul>
+      function hexxor(a, b){
+          var out = ''
+          if (a.length > b.length) {
+              for (var i = 0; i < b.length; i++) {
+                  out += (parseInt(a[i], 16) ^ parseInt(b[i], 16)).toString(16)
+              }
+          } else {
+              for (var i = 0; i < a.length; i++) {
+                  out += (parseInt(a[i], 16) ^ parseInt(b[i], 16)).toString(16)
+              }
+          }
+          return out;
+      }
+      
+      cryptoslug = CryptoJS.MD5(
+          CryptoJS.enc.Hex.parse(
+              (
+                  hexxor(
+                      CryptoJS.MD5(CryptoJS.enc.Latin1.parse(slug)).toString(CryptoJS.enc.Hex),
+                      CryptoJS.MD5(CryptoJS.enc.Latin1.parse(host)).toString(CryptoJS.enc.Hex)
+                  )
+              )
+          )
+      ).toString(CryptoJS.enc.Hex);
 
-<h2>
-    News
-</h2>
-<ul>
-    <li> <b>Nov 15, 2019</b>:
-I delivered a spotlight talk and presented a poster at
-    the <a href="https://bars2019.github.io/">
-        2019 Bay Area Robotic Symposium
-    </a>
-    </li>
-</ul>
+      window.location.href = cryptoslug;
+  }
 
-    <h2>
-        Pages
-    </h2>
-    <ul class="toc">
-        <li>
-            <p>
-                <a href="awards.html">
-                    Awards
-                </a>
-            </p>
-        </li>
-        <li>
-            <p>
-                <a href="publications.html">
-                    Publications
-                </a>
-            </p>
-        </li>
-        <li>
-            <p>
-                <a href="talks_and_posters.html">
-                    Talks and Posters
-                </a>
-            </p>
-        </li>
-    </ul>
+  hostEl.onkeypress = function(e) {
+      if (!e) e = window.event;
+      var keyCode = e.keyCode || e.which;
+      if (keyCode == '13') {
+          decrypt();
+          return false;
+      }
+  }
 
+  submitBtn.onclick = decrypt;
+  
+</script>
+</div>
 </article>
     </main>
 
