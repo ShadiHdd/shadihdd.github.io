@@ -197,11 +197,7 @@ function bindScrollTriggers(element, over_cb, out_cb) {
     window.addEventListener('scroll', scroll_listener);
     window.addEventListener('resize', resize_listener);
     resize_listener();
-
-    // trigger scroll event
-    window.scrollTo(window.scrollX, window.scrollY - 1);
-    window.scrollTo(window.scrollX, window.scrollY + 1);
-
+    scroll_listener();
 }
 
 /*       _          _                 _   _
@@ -263,6 +259,25 @@ function _doAnimation() {
         _animation_loop_running = false;
     }
 }
+
+function animate_when_visible(element, animate_frame_callback) {
+
+    bindScrollTriggers(
+        element,
+        // start animation when content in view
+        function() {
+            addAnimation(
+                animate_frame_callback
+            );
+        },
+        // stop animation when not in view
+        function() {
+            removeAnimation(
+                animate_frame_callback
+            );
+        }
+    );
+};
 
 /*  __  __
  * |  \/  | ___  _   _ ___  ___
@@ -409,6 +424,38 @@ onReady(function() {
     // Replace .katex elements with their TeX source (<annotation> element).
     // Modifies fragment in-place.
     var katexReplaceWithTex = function(fragment) {
+
+        // expand footnotes
+        var footnote_ol = document.createElement('ol');
+
+        var footnotes = fragment.querySelectorAll('sup');
+        for (let i = 0; i < footnotes.length; i++) {
+            var element = footnotes[i];
+            var notename = element.id.substring('fnref:'.length);
+            element.innerHTML = '[^' + notename + ']';
+
+            console.log(notename)
+            var cln = document.getElementById('fn:' + notename).cloneNode(true);
+            var label = document.createElement('span');
+            label.innerHTML = '[^' + notename + ']:';
+            cln.prepend(label);
+            footnote_ol.appendChild(cln);
+        }
+        var p = document.createElement('p');
+        p.innerHTML = '\n\n';
+        fragment.appendChild(p);
+        fragment.appendChild(footnote_ol);
+
+        var backrefs = fragment.querySelectorAll('.footnote-backref');
+        for (let i = 0; i < backrefs.length; i++) {
+            var element = backrefs[i];
+            if (element.remove) {
+                element.remove(null);
+            } else {
+                element.parentNode.removeChild(element);
+            }
+        }
+
         // Remove .katex-html blocks that are preceded by .katex-mathml blocks
         // (which will get replaced below).
         var katexHtml = fragment.querySelectorAll('.katex-mathml + .katex-html');
@@ -435,13 +482,19 @@ onReady(function() {
                 texSource.innerHTML = '$' + texSource.innerHTML + '$';
             }
         }
+
         // Switch display math to display delimiters.
         var displays = fragment.querySelectorAll('.katex-display annotation');
         for (let i = 0; i < displays.length; i++) {
             var element = displays[i];
-            element.innerHTML = '$$' + element.innerHTML.substr(1, element.innerHTML.length - 2) + '$$';
+            element.innerHTML = '$$\n' + element.innerHTML.substr(1, element.innerHTML.length - 2) + '$$';
         }
-        return fragment;
+
+        var text = fragment.textContent
+            .replace(/\$\n/g, '$')
+            .replace(/\n\n\$/g, '$')
+
+        return text;
     };
 
     // Global copy handler to modify behavior on .katex elements.
@@ -461,8 +514,10 @@ onReady(function() {
         }
         event.clipboardData.setData('text/html', html.join(''));
         // Rewrite plain-text version.
-        event.clipboardData.setData('text/plain',
-            katexReplaceWithTex(fragment).textContent);
+        event.clipboardData.setData(
+            'text/plain',
+            katexReplaceWithTex(fragment)
+        );
         // Prevent normal copy handling.
         event.preventDefault();
     });

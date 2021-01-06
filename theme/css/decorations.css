@@ -72,8 +72,13 @@ td.linenos {
     width: 2ch;
 }
 
-/* Forms, Input */
+/* Superscripts */
+sup {
+    vertical-align: super;
+    line-height: 0.5em;
+}
 
+/* Forms, Input */
 input[type=checkbox] {
     transform: scale(1.5);
 }
