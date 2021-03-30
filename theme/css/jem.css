@@ -274,7 +274,7 @@ article {
 img, svg, .svg-container{
     display: block;
     max-width: 100%;
-    margin: auto;
+    /* margin: auto; */
 }
 
 dt {
