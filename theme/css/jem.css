@@ -7,6 +7,7 @@ body {
     padding-left: 50px;
     padding-right: 50px;
     margin: 0px;
+    color: #e8e6e3;
 }
 
 tt {
@@ -290,4 +291,22 @@ dt {
 
 .math {
     text-align: center;
+}
+
+/* darkmode */
+
+body {
+    background: #181a1b;;
+}
+
+h1, h2, h3 {
+    color: rgb(97, 147, 195);
+}
+
+h1, h2 {
+    border-bottom-color: rgb(72, 78, 81);
+}
+
+a, a > tt {
+    color: rgb(129, 178, 225);
 }
