@@ -44,8 +44,8 @@ img, svg, .svg-container{
 
 .caption {
     display: block;
-    font-size: 90%;
-    max-width: 90%;
+    /* font-size: 90%; */
+    /* max-width: 90%; */
     margin: auto;
 }
 

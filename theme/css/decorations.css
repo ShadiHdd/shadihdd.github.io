@@ -2,30 +2,30 @@
  * fonts, sizes, outlines, colors, etc.
  */
 
-main {
-    /* For PurpleHack, line-length is ~80ch*/
-    max-width: 63ch;
-    min-width: 30ch;
-}
+/* main { */
+/*     /\* For PurpleHack, line-length is ~80ch*\/ */
+/*     max-width: 63ch; */
+/*     min-width: 30ch; */
+/* } */
 
-body {
-    font-family: PurpleHack, serif;
-    font-size: 22px;
-}
-pre {
-    font-family: SourceCodePro, monospace;
-    font-size: 62%;
-}
-code {
-    font-size: 80%;
-}
-h1, h2, h3, h4,
-.toc, nav ul {
-    font-size: 80%;
-    font-family: sans-serif;
-}
-.math {
-    font-size: 80%;
+/* body { */
+/*     /\* font-family: PurpleHack, serif; *\/ */
+/*     font-size: 22px; */
+/* } */
+/* pre { */
+/*     font-family: SourceCodePro, monospace; */
+/*     font-size: 62%; */
+/* } */
+/* code { */
+/*     font-size: 80%; */
+/* } */
+/* h1, h2, h3, h4, */
+/* .toc, nav ul { */
+/*     font-size: 80%; */
+/*     font-family: sans-serif; */
+/* } */
+/* .math { */
+/*     font-size: 80%; */
 }
 
 /*******************************************************************/
@@ -36,7 +36,7 @@ header > h1 {
     font-size: 280%;
 }
 header > p {
-    font-size: 80%;
+    /* font-size: 80%; */
     text-align: right;
 }
 
@@ -53,9 +53,9 @@ blockquote:before {
 }
 
 /* lists */
-ul, ol, blockquote, .footnote, .wiki-extract {
-    font-size: 95%;
-}
+/* ul, ol, blockquote, .footnote, .wiki-extract { */
+/*     font-size: 95%; */
+/* } */
 
 /* past second level*/
 li li ul, li li ol {
@@ -91,6 +91,13 @@ input[type=button], button {
     border: 1px solid;
 }
 
+select {
+    padding: 0.8ch 2ch;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid;
+}
 
 /* Pygments */
 

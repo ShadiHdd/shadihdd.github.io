@@ -97,6 +97,10 @@ input[type=button], button {
     background-color: var(--g2);
     color: var(--w0);
 }
+select {
+    background-color: var(--g2);
+    color: var(--w0);
+}
 input:focus {
   border-color: var(--h1);
 }
