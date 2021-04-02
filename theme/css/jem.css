@@ -310,3 +310,5 @@ h1, h2 {
 a, a > tt {
     color: rgb(129, 178, 225);
 }
+
+table, tr, td {border: none;}
